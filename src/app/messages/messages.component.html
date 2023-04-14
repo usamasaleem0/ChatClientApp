@@ -1,0 +1,22 @@
+<!-- <div class="card border-secondary">
+
+    <p *ngFor="let m of messages">
+        <span style="font-weight: bold;">{{m.from}}:</span> {{m.content}}
+    </p>
+</div> -->
+
+<div class="panel panel-default m-3" >
+    
+    <div class="panel-body msg_container_base" *ngFor="let m of messages">
+        <div class="row msg_container base_sent">
+            <div class="col-md-10 col-xs-10">
+                <div class="messages msg_sent" [ngClass]="{'text-end':m.from ===_chatService.myName}">
+                    <span style="font-weight: bold; color: deepskyblue;">{{m.from}}</span>
+                    <p> {{m.content}}</p>
+                    <!-- <time datetime="2017-11-13T20:00">김승연 • 51 min</time> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
+    <!-- <div class="row">
+        <div class="col-md-10">
+            <input type="tex" [(ngModel)]="content" name="content" required class="form-control">
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" [disabled]="!messageForm.valid">Send</button>
+        </div>
+    </div> -->
+
+    <div class="panel-footer m-3">
+        <div class="input-group">
+            <input [(ngModel)]="content" name="content" required type="text" class="form-control input-sm chat_input"
+                placeholder="Write your message here..." />
+            <span class="input-group-btn">
+                <button class="btn btn-primary btn-sm" [disabled]="!messageForm.valid">Send</button>
+            </span>
+        </div>
+    </div>
+</form>

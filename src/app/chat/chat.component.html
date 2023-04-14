@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-warning mb-3" (click)="backToHome()">Back To Home</button>
+        <div class="list-group" *ngFor="let user of _chatService.onlineUsers">
+            <button type="button" class="list-group-item list-group-item-action  mt-2"
+                (dblclick)="openPrivateChat(user)" [ngClass]="{'active':user ===_chatService.myName}" [disabled]="">
+                {{user}}
+            </button>
+        </div>
+
+    </div>
+    <div class="col-md-9 ">
+
+        <div class="card border-secondary">
+            <app-messages [messages]="_chatService.messages"></app-messages>
+            <app-chat-input (contentEmitter)="sendMessage($event)"></app-chat-input>
+        </div>
+    </div>
+
+
+
+</div>
